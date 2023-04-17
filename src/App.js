@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+
+import './App.css'
+
+import Header from './components/Header'
+import InputForm from './components/InputForm'
+import DogBreedList from './components/DogBreedList'
 
 function App() {
+
+  const DUMMY_BREEDS = [
+    'Golden Retriever',
+    'Leonberger',
+    'Keeshond',
+    'Wolfhound',
+    'Old English Sheepdog',
+    'Norfolk Terrier'
+  ]
+
+  const [dogBreedList, setDogBreedList] = useState(DUMMY_BREEDS)
+
+  const inputBreed = (newBreed) => setDogBreedList([...dogBreedList, newBreed])
+  console.log(dogBreedList)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <InputForm breeds={inputBreed} />
+      <DogBreedList list={dogBreedList} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

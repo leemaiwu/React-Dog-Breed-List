@@ -1,0 +1,17 @@
+.form-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputfield {
+    margin: 0px 8px;
+    height: 1.20rem;
+    font-size: .85rem;
+}
+
+.formButton {
+    padding: 0.20rem 0.60rem;
+}:hover.formButton {
+    cursor: pointer;
+}
